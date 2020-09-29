@@ -1,0 +1,271 @@
+.hdrStyle {
+    background-color: slateblue;
+    color: white;
+    height: 80px;
+    padding-top: 1px;
+    padding-left: 5%;
+}
+
+.textBlock {
+    text-align: justify;
+    line-height: 30px;
+    color: dimgray;
+}
+
+.textRight {
+    text-align: right;
+}
+
+.textError {
+    color: mediumvioletred;
+    display: inline-block;
+}
+
+.infoSymbol {
+    width: 50px;
+    color: lemonchiffon;
+    text-align: center;
+    background-color: dodgerblue;
+    border: 6px solid mediumblue;
+    border-radius: 50%;
+    font-family: "Comic Sans";
+    font-style: bold;
+    font-size: 25px;
+    display: inline-block;
+}
+
+.exitStyle {
+    position: relative;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    color: black;
+    text-align: center;
+    background-color: lavenderblush;
+    border: 1px solid black;
+    border-radius: 5%;
+    font-style: bold;
+    font-size: 25px;
+    display: float;
+    float: right;
+}
+
+.exitStyle .tooltipStyle {
+    visibility: hidden;
+    position: absolute;
+    width: 60px;
+    top: 50%;
+    right: 50%;
+    color: white;
+    text-align: center;
+    background-color: black;
+    font-family: "Arial";
+    font-style: bold;
+    font-size: 15px;
+}
+
+.exitStyle:hover .tooltipStyle {
+    visibility: visible;
+}
+
+.errorSymbol {
+    width: 50px;
+    color: lemonchiffon;
+    text-align: center;
+    background-color: crimson;
+    border: 6px solid maroon;
+    border-radius: 50%;
+    font-family: "Comic Sans";
+    font-style: bold;
+    font-size: 25px;
+    display: inline-block;
+    animation: blinking 1.0s infinite;
+}
+
+@keyframes blinking {
+    0% {opacity: 0}
+    50% {opacity: 0.7}
+    100% {opacity: 1.0}
+}
+
+.users {
+    width: 100%;
+}
+
+.users td, th {
+    border: 1px solid lightgray;
+    padding: 5px;
+    height: 25px;
+}
+
+.users th {
+    background-color: seagreen;
+    width: 150px;
+    color: white;
+    text-align: left;
+}
+
+.users tr:nth-child(even) {
+    background-color: lightgray;
+}
+
+.users tr:hover {
+    background-color: darkgray;
+}
+
+.limiter {
+    overflow: auto;
+    height: 280px;
+}
+
+.bigCell {
+    border: 5px double darkgray;
+    border-radius: 30px;
+    width: 1500px;
+    height: 200px;
+}
+
+a.linkStyleMedium {
+    color: royalblue;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: arial;
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkblue;
+}
+
+div.tableFormat {
+    display: table;
+    width: 100%;
+}
+
+div.rowFormat {
+    display: table-row;
+}
+
+div.rowBottom {
+    display: table-caption;
+    caption-side: bottom;
+    background-color: lightslategray;
+    color: white;
+    text-align: right;
+    height: 100px;
+    padding-right: 10px;
+}
+
+div.cellFormat {
+    display: table-cell;
+    width: 80%;
+    padding-left: 10%;
+    vertical-align: middle;
+}
+
+div.boxStyle {
+    display: box;
+    width: 80%;
+}
+
+div.sidebar {
+    display: table-cell;
+    background-color: lightcyan;
+    height: 60vh;
+    width: 20%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+button.simpleStyle {
+    border: none;
+    outline: none;
+    padding: 20px;
+    background-color: seagreen;
+    color: white;
+    font-weight: bold;
+    font-family: tahoma;
+    float: right;
+    box-shadow: 0 5px darkgray;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: mediumseagreen;
+}
+
+button:active {
+    box-shadow: 0 2px darkgray;
+    background-color: seagreen;
+    transform: translateY(4px);
+}
+
+input.smallBox {
+    width: 40px;
+    text-align: center;
+    margin: 0;
+}
+
+input.largeBox {
+    width: 150px;
+    margin: 0;
+}
+
+label.mediumBox {
+    width: 100px;
+    padding: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+td.paramSmallDesc {
+    width: 30px;
+    text-align: right;
+}
+
+td.paramDesc {
+    width: 70px;
+    text-align: right;
+}
+
+td.measureDesc {
+    width: 250px;
+    text-align: right;
+}
+
+td.spacious {
+    padding: 10px;
+}
+
+div.popupBox {
+    position: fixed;
+    width: 100%;
+    height: 50vh;
+    top: 20%;
+    left: 20%;
+}
+
+div.popupBoxBig {
+    position: fixed;
+    width: 100%;
+    height: 90vh;
+    top: 15%;
+    left: 20%;
+}
+
+div.popup {
+    position: relative;
+    width: 45%;
+    height: auto;
+    max-height: 90vh;
+    margin-top: calc(5vh - 10px);
+    background: lavenderblush;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid black;
+    overflow: auto;
+}
