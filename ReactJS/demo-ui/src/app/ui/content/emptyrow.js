@@ -1,8 +1,8 @@
 import React from "react";
 
-export const EmptyRow = (props) => {
+export const EmptyRow = () => {
     return (
-        <tr id={props.id}>
+        <tr>
             <td></td>
             <td></td>
             <td></td>

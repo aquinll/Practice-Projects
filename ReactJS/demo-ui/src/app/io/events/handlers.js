@@ -1,18 +1,23 @@
 import { DECIMAL_POINT } from "../../constants/stringvalues";
 
-export function verifyNumericValue(obj) {
+export function fixNumberText(obj) {
+    var text = obj.value;
+    var textSize = text.length;
+    if (textSize === 1) {
+        obj.value = "";
+    }
+    else {
+        obj.value = text.slice(0, textSize-1);
+    }
+}
+
+export function verifyNumericDecimalValue(obj) {
     var thisValue = obj.value;
-    var thisValueSize = thisValue.length;
-    var numValue = (thisValue.includes(DECIMAL_POINT)) ? thisValue.replace(".","") : thisValue;
+    var numValue = (thisValue.includes(DECIMAL_POINT)) ? thisValue.replace(DECIMAL_POINT,"") : thisValue;
 
     var verified = false;
     if (isNaN(numValue)) {
-        if (thisValueSize === 1) {
-            obj.value = "";
-        }
-        else {
-            obj.value = thisValue.slice(0, thisValueSize-1);
-        }
+        fixNumberText(obj);
     } else {
         verified = true;
     }

@@ -1,9 +1,12 @@
 import React from "react";
 
-import { verifyNumericValue } from "../../io/events/handlers";
+import { verifyNumericDecimalValue } from "../../io/events/handlers";
 import { InvalidInputPage } from "./invalidinputpage";
 
 import { PI_VAL } from "../../constants/numericvalues";
+import { INVALID_INPUT_TITLE,
+         INVALID_NUM_ERROR,
+         INVALID_NUMDEC_ERROR } from "../../constants/stringvalues";
 
 export class AreaPage extends React.Component {
 
@@ -12,8 +15,8 @@ export class AreaPage extends React.Component {
         this.alertPopupRef = React.createRef();
     }
 
-    onTextChange() {
-        if (!verifyNumericValue(event.target)) {
+    onTextChange(event) {
+        if (!verifyNumericDecimalValue(event.target)) {
             this.alertPopupRef.current.togglePopup();
         }
     }
@@ -50,7 +53,7 @@ export class AreaPage extends React.Component {
         });
     }
 
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate() {
         window.document.getElementById("areaCircleResult").textContent = (this.props.result.areaCircleResult !== -1) ?
                                                                           this.props.result.areaCircleResult : "";
         window.document.getElementById("areaEllipseResult").textContent = (this.props.result.areaEllipseResult !== -1) ?
@@ -66,7 +69,8 @@ export class AreaPage extends React.Component {
     render() {
         return (
                 <div className="boxStyle">
-                    <InvalidInputPage ref={this.alertPopupRef} toggle={false}/>
+                    <InvalidInputPage ref={this.alertPopupRef} toggle={false} title={INVALID_INPUT_TITLE}
+                                      error1={INVALID_NUM_ERROR} error2={INVALID_NUMDEC_ERROR}/>
                     <table>
                         <tbody>
                             <tr>

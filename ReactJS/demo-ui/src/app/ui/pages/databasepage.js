@@ -5,8 +5,8 @@ import { DOUBLE,
          MAX_EMPTY_ROWS } from "../../constants/numericvalues";
 
 import { EmptyRow } from "../content/emptyrow";
-import { UserItem } from "../content/userinfo";
-import { InputUserInfoPage } from "./inputuser";
+import { UserItem } from "../content/useritem";
+import { UserInfoPage } from "./userinfopage";
 
 export class DatabasePage extends React.Component {
 
@@ -24,10 +24,9 @@ export class DatabasePage extends React.Component {
     }
 
     listUsers() {
-        var items = this.props.data.list.map((user) =>
+        return this.props.data.list.map((user) =>
             <UserItem user={user} key={user.id} del={(a) => this.props.del(a)}/>
         );
-        return items;
     }
 
     showUsers() {
@@ -49,7 +48,7 @@ export class DatabasePage extends React.Component {
     render() {
         return (
             <div className="boxStyle">
-                <InputUserInfoPage ref={this.popupAddUser} toggle={false} add={(a) => this.props.add(a)} />
+                <UserInfoPage ref={this.popupAddUser} toggle={false} add={(a) => this.props.add(a)} />
                 <table>
                     <tbody>
                         <tr className="rowFormat">

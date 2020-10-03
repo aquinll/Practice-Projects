@@ -31,7 +31,11 @@ export class MyApp extends React.Component {
                                         <DatabasePage data={this.props.database} add={(a) => this.props.addUser(a)}
                                                       del={(a) => this.props.delUser(a)} clear={() => this.props.clearData()} />
                                     )}/>
-                                <Route path="/marketplacepage" component={MarketplacePage} />
+                                <Route path="/marketplacepage" render={() => (
+                                        <MarketplacePage data={this.props.market} addi={(a) => this.props.addItem(a)}
+                                                         deli={(a) => this.props.delItem(a)} addc={(a) => this.props.addCart(a)}
+                                                         delc={(a) => this.props.delCart(a)} rmc={() => this.props.clearCart()} />
+                                    )} />
                             </Switch>
                         </div>
                     </div>

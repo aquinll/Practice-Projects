@@ -241,6 +241,17 @@ td.spacious {
     padding: 10px;
 }
 
+td.itemDesc {
+    width: 200px;
+    border: 1px solid black;
+}
+
+td.itemQuantity {
+    width: 50px;
+    text-align: center;
+    border: 1px solid black;
+}
+
 div.popupBox {
     position: fixed;
     width: 100%;

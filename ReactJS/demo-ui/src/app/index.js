@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { calculateArea } from "./io/actions/areaAction";
 import { calculateVolume } from "./io/actions/volumeAction";
 import { addUserInfo, deleteUserInfo, clearDatabase } from "./io/actions/userAction";
+import { addItemInfo, deleteItemInfo, addCartInfo, deleteCartInfo, cleanCart } from "./io/actions/marketAction";
 
 import { appStore } from "./myStore"
 import { MyApp } from "./ui/pages/myapp";
@@ -24,7 +25,8 @@ const StatePropMap = (state) => {
     return {
         areaResult: state.area,
         volumeResult: state.volume,
-        database: state.data
+        database: state.data,
+        market: state.market
     };
 };
 
@@ -42,8 +44,23 @@ const DispatchPropMap = (dispatch) => {
         delUser: (key) => {
             dispatch(deleteUserInfo(key));
         },
-        clearData: (volumeParams) => {
-            dispatch(clearDatabase(volumeParams));
+        clearData: () => {
+            dispatch(clearDatabase());
+        },
+        addItem: (item) => {
+            dispatch(addItemInfo(item));
+        },
+        delItem: (key) => {
+            dispatch(deleteItemInfo(key));
+        },
+        addCart: (key) => {
+            dispatch(addCartInfo(key));
+        },
+        delCart: (key) => {
+            dispatch(deleteCartInfo(key));
+        },
+        clearCart: () => {
+            dispatch(cleanCart());
         }
     };
 };

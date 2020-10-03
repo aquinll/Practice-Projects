@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { InvalidInputBox } from "../content/invalidinputbox";
+import { CartInfo } from "../content/cartinfo";
 
-export class InvalidInputPage extends React.Component {
+export class CartInfoPage extends React.Component {
 
     constructor(props) {
         super(props);
@@ -21,13 +21,15 @@ export class InvalidInputPage extends React.Component {
     render() {
         return (
             <div>
-                {this.state.toggle && <InvalidInputBox close={() => this.togglePopup()} title={this.props.title}
-                                                       error1={this.props.error1} error2={this.props.error2}/>}
+                <div>
+                    {this.state.toggle && <CartInfo data={this.props.data} buy={() => this.props.clear()}
+                                                    close={() => this.togglePopup()} del={(a) => this.props.del(a)} />}
+                </div>
             </div>
         );
     }
 }
 
-InvalidInputPage.propTypes = {
+CartInfoPage.propTypes = {
     toggle: PropTypes.bool
 };
