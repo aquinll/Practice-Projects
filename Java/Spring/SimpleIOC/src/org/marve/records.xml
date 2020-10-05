@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <bean id="emp1" class="com.marve.Employee">
+        <property name="employeeId" value="1245678"/>
+        <property name="employeeName" value="Emmanuel Baptist"/>
+        <property name="employeeAge" value="45"/>
+        <property name="employeeAddress" value="Talisay, Cebu City"/>
+    </bean>
+
+    <bean id="emp2" class="com.marve.Employee">
+        <property name="employeeId" value="3235678"/>
+        <property name="employeeName" value="Lloyd Marlon Aquino"/>
+        <property name="employeeAge" value="37"/>
+        <property name="employeeAddress" value="Lapu-Lapu City, Cebu"/>
+    </bean>
+
+</beans>
