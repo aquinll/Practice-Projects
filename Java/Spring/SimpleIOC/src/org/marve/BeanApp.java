@@ -10,18 +10,18 @@ public class BeanApp {
 	String xmlFile;
 	DefaultListableBeanFactory storage;
 	XmlBeanDefinitionReader reader;
-	
+
 	public BeanApp(String xml) {
 		System.out.println("Inversion of Control using Beans...");
 		xmlFile = xml;
 	}
-	
+
 	public void run( ) {
 		storage = new DefaultListableBeanFactory();
 		reader = new XmlBeanDefinitionReader((BeanDefinitionRegistry)storage);
 		reader.loadBeanDefinitions(new ClassPathResource(xmlFile));
 	}
-	
+
 	public Employee getRecord(String record) {
 		return (Employee) storage.getBean(record);
 	}
